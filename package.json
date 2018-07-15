@@ -1,0 +1,22 @@
+{
+  "name": "project-4-feed-reader",
+  "version": "1.0.0",
+  "description": "Project 4 for Udacity's FEND",
+  "main": "src/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amyyf/frontend-nanodegree-feedreader.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amyyf/frontend-nanodegree-feedreader/issues"
+  },
+  "homepage": "https://github.com/amyyf/frontend-nanodegree-feedreader#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
