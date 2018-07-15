@@ -5,9 +5,20 @@ const sourcemaps = require('gulp-sourcemaps');
 const useref = require('gulp-useref');
 const gulpIf = require('gulp-if');
 const cssnano = require('gulp-cssnano');
+const browserSync = require('browser-sync').create();
 
-gulp.task('default', function () {
-  console.log('hello');
+gulp.task('default', ['browserSync'], function () {
+  gulp.watch('src/**/*.css', browserSync.reload);
+  gulp.watch('src/**/*.js', browserSync.reload);
+  gulp.watch('src/*.html', browserSync.reload);
+  gulp.watch('src/jasmine/**/*.js', browserSync.reload);
+});
+
+gulp.task('browserSync', function () {
+  browserSync.init({
+    server: 'src/'
+  });
+  browserSync.stream();
 });
 
 gulp.task('script-dist', function () {
