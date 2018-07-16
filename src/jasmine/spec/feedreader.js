@@ -31,7 +31,7 @@ $(function () {
      * in the allFeeds object and ensures it has a URL defined
      * and that the URL is not empty.
      */
-    it('each feed has a URL with a link', function () {
+    it('have URLs with link text', function () {
       for (let feed of allFeeds) {
         expect(feed.url).toBeDefined();
         expect(feed.url).not.toBe('');
@@ -43,7 +43,7 @@ $(function () {
      * and that the name is not empty.
      */
 
-    it('each feed has a name', function () {
+    it('have names', function () {
       for (let feed of allFeeds) {
         expect(feed.name).toBeDefined();
         expect(feed.name).not.toBe('');
@@ -59,8 +59,12 @@ $(function () {
      * the CSS to determine how we're performing the
      * hiding/showing of the menu element.
      */
+    it('is hidden by default', function () {
+      const body = $('body');
+      expect(body.hasClass('menu-hidden')).toBe(true);
+    });
 
-     /* TODO: Write a test that ensures the menu changes
+    /* TODO: Write a test that ensures the menu changes
       * visibility when the menu icon is clicked. This test
       * should have two expectations: does the menu display when
       * clicked and does it hide when clicked again.
