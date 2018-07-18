@@ -90,16 +90,26 @@ $(function () {
     });
     it('loads entries', function () {
       const entries = $('.feed').has('.entry');
-      console.log(entries);
       expect(entries.length).not.toBe(0);
     });
   });
 
 /* DONE: Write a new test suite named "New Feed Selection" */
   describe('New Feed Selection', function () {
-    /* TODO: Write a test that ensures when a new feed is loaded
+    /* DONE: Write a test that ensures when a new feed is loaded
      * by the loadFeed function that the content actually changes.
      * Remember, loadFeed() is asynchronous.
      */
+    beforeEach(function (done) {
+      loadFeed(0, done);
+    });
+    it('changes the content when loadFeed runs', function (done) {
+      const initialFeed = $('.feed').text();
+      loadFeed(1, function () {
+        const newFeed = $('.feed').text();
+        expect(newFeed).not.toEqual(initialFeed);
+        done();
+      })
+    });
   });
 }());
