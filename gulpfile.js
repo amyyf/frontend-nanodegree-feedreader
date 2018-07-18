@@ -21,6 +21,8 @@ gulp.task('browserSync', function () {
   browserSync.stream();
 });
 
+gulp.task('dist-files', ['script-dist', 'useref', 'copy-fonts']);
+
 gulp.task('script-dist', function () {
   gulp.src('src/js/*.js')
     .pipe(sourcemaps.init())
